@@ -6,6 +6,8 @@ import Navbar from './components/Navbar/Navbar'
 import Banner from './components/Banner/Banner'
 import SearchBus from './components/SearchBus/SearchBus'
 import TicketingSteps from './components/TicketingSteps/TicketingSteps'
+import { BusList } from './components/BusList/BusList'
+import Footer from './components/Footer/Footer'
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
       {/* <SearchBus></SearchBus> */}
       <Home></Home>
       <TicketingSteps></TicketingSteps>
+      <BusList></BusList>
+      <Footer></Footer>
     </div>
   )
 }
