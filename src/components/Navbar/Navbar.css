@@ -1,0 +1,15 @@
+ul {
+  display: flex;
+}
+ul > li:not(:last-child) {
+  margin-right: 19px;
+}
+ul > button > li {
+  font-size: 16px;
+  font-weight: 600;
+}
+.siteIcon h4 {
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
