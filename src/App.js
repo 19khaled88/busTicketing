@@ -10,6 +10,7 @@ import TicketingSteps from './components/TicketingSteps/TicketingSteps'
 import { BusList } from './components/BusList/BusList'
 import Footer from './components/Footer/Footer'
 import Position from './components/Position/Position'
+import BusSeatBook from './components/ButSeatBook/BusSeatBook'
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       {/* <BusList></BusList> */}
       {/* <Footer></Footer> */}
       {/* <Position></Position> */}
+      <BusSeatBook></BusSeatBook>
     </div>
   )
 }
