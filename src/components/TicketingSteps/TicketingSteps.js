@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 const TicketingSteps = () => {
   return (
-    <div className="mb-10 flex flex-col gap-x-3 container justify-evenly mx-auto">
+    <div className="absolute... inset-x-0 mb-10 flex flex-col gap-x-3 container justify-evenly mx-auto">
       <h4 className="text-center mb-9 text-3xl">
         How you follow steps to book your seat
       </h4>

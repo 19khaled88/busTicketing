@@ -1,5 +1,6 @@
 import logo from './logo.svg'
 import './App.css'
+import './index.css'
 import { Nav } from './components/Nav/Nav'
 import { Home } from './components/Home/Home'
 import Navbar from './components/Navbar/Navbar'
@@ -8,6 +9,7 @@ import SearchBus from './components/SearchBus/SearchBus'
 import TicketingSteps from './components/TicketingSteps/TicketingSteps'
 import { BusList } from './components/BusList/BusList'
 import Footer from './components/Footer/Footer'
+import Position from './components/Position/Position'
 
 function App() {
   return (
@@ -16,10 +18,11 @@ function App() {
       <Navbar></Navbar>
       <Banner></Banner>
       {/* <SearchBus></SearchBus> */}
-      <Home></Home>
+      {/* <Home></Home> */}
       <TicketingSteps></TicketingSteps>
-      <BusList></BusList>
-      <Footer></Footer>
+      {/* <BusList></BusList> */}
+      {/* <Footer></Footer> */}
+      {/* <Position></Position> */}
     </div>
   )
 }

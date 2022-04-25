@@ -2,7 +2,7 @@ import React from 'react'
 
 export const BusList = () => {
   return (
-    <div className="mb-10 flex flex-col gap-x-3 justify-evenly mx-auto">
+    <div className="absolute... mb-10 flex flex-col gap-x-3 justify-evenly mx-auto">
       <div className="flex flex-row justify-evenly py-5">
         <div className="flex items-center">
           <hr className="h-1 w-96 bg-red-400" />
