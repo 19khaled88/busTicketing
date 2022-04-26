@@ -1,16 +1,10 @@
-import logo from './logo.svg'
 import './App.css'
-import './index.css'
-import { Nav } from './components/Nav/Nav'
-import { Home } from './components/Home/Home'
-import Navbar from './components/Navbar/Navbar'
 import Banner from './components/Banner/Banner'
-import SearchBus from './components/SearchBus/SearchBus'
-import TicketingSteps from './components/TicketingSteps/TicketingSteps'
-import { BusList } from './components/BusList/BusList'
+import BusSeatBook from './components/BusSeatBook/BusSeatBook'
 import Footer from './components/Footer/Footer'
-import Position from './components/Position/Position'
-import BusSeatBook from './components/ButSeatBook/BusSeatBook'
+import Navbar from './components/Navbar/Navbar'
+import TicketingSteps from './components/TicketingSteps/TicketingSteps'
+import './index.css'
 
 function App() {
   return (
@@ -22,9 +16,9 @@ function App() {
       {/* <Home></Home> */}
       <TicketingSteps></TicketingSteps>
       {/* <BusList></BusList> */}
-      {/* <Footer></Footer> */}
-      {/* <Position></Position> */}
       <BusSeatBook></BusSeatBook>
+      <Footer></Footer>
+      {/* <Position></Position> */}
     </div>
   )
 }

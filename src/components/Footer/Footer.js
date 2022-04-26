@@ -2,7 +2,7 @@ import React from 'react'
 import './Footer.css'
 const Footer = () => {
   return (
-    <div className="mx-auto flex flex-row gap-x-52 justify-center py-10 background">
+    <div className="absolute... mx-auto flex flex-row gap-x-52 justify-center py-10 background">
       <div className="text-white">
         <h4 className="mb-5 text-2xl">Available Link</h4>
         <p>
