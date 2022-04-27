@@ -30,14 +30,14 @@ const Navbar = () => {
             </button>
             <button>
               <li className="py-2 px-2 hover:bg-pink-600 hover:text-stone-800">
-                <Link to="/about">About Us</Link>
+                <Link to="/demo">Demo</Link>
               </li>
             </button>
-            <button>
+            {/* <button>
               <li className="py-2 px-2 hover:bg-pink-600 hover:text-stone-800">
                 <Link to="/contact"> Contact Us</Link>
               </li>
-            </button>
+            </button> */}
             <button>
               <li className="py-2 px-2 hover:bg-pink-600 hover:text-stone-800">
                 {user !== null ? (
