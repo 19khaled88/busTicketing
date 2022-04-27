@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { useCreateUserWithEmailAndPassword, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../Firebase/Firebase';
 import './Register.css';
 const Register = () => {
@@ -17,13 +18,20 @@ const Register = () => {
     const cPassRef = useRef(null)
     let errorState1;
     let errorState2;
+    let navigate = useNavigate()
+    let location = useLocation()
 
+    let from = location.state?.from?.pathname || '/contact'
     if(error){
         errorState1 = error?.message
     }
 
     if(error1){
         errorState2 =  error1?.message; 
+    }
+
+    if(user){
+        navigate(from, {replace:true});
     }
 
    

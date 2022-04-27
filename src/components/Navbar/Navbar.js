@@ -24,7 +24,7 @@ const Navbar = () => {
             </button>
             <button>
               <li className="py-2 px-2 hover:bg-pink-600 hover:text-stone-800">
-                Contact Us
+               <Link to="/contact"> Contact Us</Link>
               </li>
             </button>
             <button>
