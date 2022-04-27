@@ -1,7 +1,8 @@
-import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
-import './Navbar.css'
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './Navbar.css';
 const Navbar = () => {
   return (
     <div className="fixed inset-x-0 z-20  py-2 bg-amber-300 w-full">
@@ -12,13 +13,13 @@ const Navbar = () => {
         <div>
           <ul className="text-rose-600">
             <button>
-              <li className="py-2 px-2 hover:bg-pink-600 hover:text-stone-800">
-                Home
-              </li>
+                <li className="py-2 px-2 hover:bg-pink-600 hover:text-stone-800">
+                  <Link to="/">Home</Link>
+                </li>
             </button>
             <button>
               <li className="py-2 px-2 hover:bg-pink-600 hover:text-stone-800">
-                About Us
+                <Link to="/about">About Us</Link>
               </li>
             </button>
             <button>
@@ -28,7 +29,7 @@ const Navbar = () => {
             </button>
             <button>
               <li className="py-2 px-2 hover:bg-pink-600 hover:text-stone-800">
-                My Account
+                <Link to="/register">My Account</Link>
               </li>
             </button>
             <button>
