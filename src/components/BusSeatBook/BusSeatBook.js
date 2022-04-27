@@ -1,34 +1,40 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { GiSteeringWheel } from 'react-icons/gi';
+import React, { useEffect, useRef, useState } from 'react'
+import { GiSteeringWheel } from 'react-icons/gi'
 const BusSeatBook = () => {
-  const [busId, setBusId] = useState('');
-  const busSelected = useRef(null);
-  const busSelected1 = useRef(null);
-
-
+  const [busId, setBusId] = useState('')
+  const busSelected = useRef(null)
+  const busSelected1 = useRef(null)
+  const test1 = useRef(null)
+  const test2 = useRef(null)
+  const test3 = useRef(null)
   const busHandler = (e) => {
     // console.log(e.currentTarget.id)
-    const id = e.currentTarget.id;
-    setBusId(id);
-    if(parseInt(id.split('-')[1]) === 107){
-      const span = busSelected.current;
-      span.className = "bg-rose-300 flex flex-col gap-y-2 py-5 flex rounded-t-3xl";
-
-      const span1 = busSelected1.current;
-      span1.className = "flex flex-col gap-y-2 hidden";
-    }else if(parseInt(id.split('-')[1]) === 108){
-      const span = busSelected1.current;
-      span.className = "bg-pink-300 flex flex-col gap-y-2 py-5 flex rounded-t-3xl";
-
-      const span1 = busSelected.current;
-      span1.className = "flex flex-col gap-y-2 hidden";
+    const id = e.currentTarget.id
+    setBusId(id)
+    if (parseInt(id.split('-')[1]) === 107) {
+      const span = busSelected.current
+      span.className =
+        'bg-rose-300 flex flex-col gap-y-2 py-5 flex rounded-t-3xl'
+      const span1 = busSelected1.current
+      span1.className = 'flex flex-col gap-y-2 hidden'
+    } else if (parseInt(id.split('-')[1]) === 108) {
+      const span = busSelected1.current
+      span.className =
+        'bg-pink-300 flex flex-col gap-y-2 py-5 flex rounded-t-3xl'
+      const span1 = busSelected.current
+      span1.className = 'flex flex-col gap-y-2 hidden'
     }
-    
   }
-  useEffect((e)=>{
-  //  const id = document.getElementById(busId.split('-')[1])
-  //  console.log(busId)
-  },[busId])
+  useEffect(
+    (e) => {
+      let test1 = ''
+      let test2 = ''
+      let test3 = ''
+      //  const id = document.getElementById(busId.split('-')[1])
+      //  console.log(busId)
+    },
+    [busId],
+  )
   return (
     <div className="absolute... flex flex-row py-10 justify-between container mx-auto">
       <div className="flex flex-col gap-y-6">
@@ -88,230 +94,571 @@ const BusSeatBook = () => {
           </div>
         </div>
       </div>
-     
+
       <div className="flex flex-col gap-y-6 w-72">
         <h4>Seat Plan</h4>
         <p>Bus No : {busId.split('-')[1]}</p>
-        <div id="107" ref={busSelected} className="flex flex-col gap-y-2 hidden">
-            <div className="flex flex-row gap-x-8 justify-evenly">
-              <div className="flex flex-row gap-x-2"></div>
-              <div className="flex flex-row gap-x-2 text-5xl"><GiSteeringWheel/></div>  
+        <div
+          id="107"
+          ref={busSelected}
+          className="flex flex-col gap-y-2 hidden"
+        >
+          <div className="flex flex-row gap-x-8 justify-evenly">
+            <div className="flex flex-row gap-x-2"></div>
+            <div className="flex flex-row gap-x-2 text-5xl">
+              <GiSteeringWheel />
             </div>
-            <div className="flex flex-row gap-x-8 justify-evenly">
-              <div className="flex flex-row gap-x-2">
-                  <button> <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">A-1</p></button>
-                  <button> <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">A-1</p></button>
-              </div>
-              <div className="flex flex-row gap-x-2">
-                  <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">A-1</p></button>
-                  <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">A-1</p></button>
-              </div>
+          </div>
+          <div className="flex flex-row gap-x-8 justify-evenly">
+            <div className="flex flex-row gap-x-2">
+              <button>
+                {' '}
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  A-1
+                </p>
+              </button>
+              <button>
+                {' '}
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  A-1
+                </p>
+              </button>
             </div>
-            <div className="flex flex-row gap-x-8 justify-evenly">
-              <div className="flex flex-row gap-x-2">
-                  <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">B-1</p></button>
-                  <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">B-2</p></button>
-              </div>
-              <div className="flex flex-row gap-x-2">
-                  <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">B-3</p></button>
-                  <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">B-4</p></button>
-              </div>
+            <div className="flex flex-row gap-x-2">
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  A-1
+                </p>
+              </button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  A-1
+                </p>
+              </button>
             </div>
-            <div className="flex flex-row gap-x-8 justify-evenly">
-              <div className="flex flex-row gap-x-2">
-                  <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">C-1</p></button>
-                  <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">C-2</p></button>
-              </div>
-              <div className="flex flex-row gap-x-2">
-                  <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">C-3</p></button>
-                  <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">C-4</p></button>
-              </div>
+          </div>
+          <div className="flex flex-row gap-x-8 justify-evenly">
+            <div className="flex flex-row gap-x-2">
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  B-1
+                </p>
+              </button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  B-2
+                </p>
+              </button>
             </div>
-            <div className="flex flex-row gap-x-8 justify-evenly">
-              <div className="flex flex-row gap-x-2">
-                  <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">D-1</p></button>
-                  <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">D-2</p></button>
-              </div>
-              <div className="flex flex-row gap-x-2">
-                  <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">D-3</p></button>
-                  <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">D-4</p></button>
-              </div>
+            <div className="flex flex-row gap-x-2">
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  B-3
+                </p>
+              </button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  B-4
+                </p>
+              </button>
             </div>
+          </div>
+          <div className="flex flex-row gap-x-8 justify-evenly">
+            <div className="flex flex-row gap-x-2">
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  C-1
+                </p>
+              </button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  C-2
+                </p>
+              </button>
+            </div>
+            <div className="flex flex-row gap-x-2">
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  C-3
+                </p>
+              </button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  C-4
+                </p>
+              </button>
+            </div>
+          </div>
+          <div className="flex flex-row gap-x-8 justify-evenly">
+            <div className="flex flex-row gap-x-2">
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  D-1
+                </p>
+              </button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  D-2
+                </p>
+              </button>
+            </div>
+            <div className="flex flex-row gap-x-2">
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  D-3
+                </p>
+              </button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  D-4
+                </p>
+              </button>
+            </div>
+          </div>
         </div>
-        <div id="108" ref={busSelected1} className="flex flex-col gap-y-2 hidden">
-            <div className="flex flex-row gap-x-8 justify-evenly">
-              <div className="flex flex-row gap-x-2"></div>
-              <div className="flex flex-row gap-x-2 text-5xl"><GiSteeringWheel/></div>  
+        <div
+          id="108"
+          ref={busSelected1}
+          className="flex flex-col gap-y-2 hidden"
+        >
+          <div className="flex flex-row gap-x-8 justify-evenly">
+            <div className="flex flex-row gap-x-2"></div>
+            <div className="flex flex-row gap-x-2 text-5xl">
+              <GiSteeringWheel />
             </div>
-            <div className="flex flex-row gap-x-8 justify-evenly">
-              <div className="flex flex-row gap-x-2">
-                  <button> <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">A-2</p></button>
-                  <button> <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">A-2</p></button>
-              </div>
-              <div className="flex flex-row gap-x-2">
-                  <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">A-2</p></button>
-                  <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">A-2</p></button>
-              </div>
+          </div>
+          <div className="flex flex-row gap-x-8 justify-evenly">
+            <div className="flex flex-row gap-x-2">
+              <button>
+                {' '}
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  A-2
+                </p>
+              </button>
+              <button>
+                {' '}
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  A-2
+                </p>
+              </button>
             </div>
-            <div className="flex flex-row gap-x-8 justify-evenly">
-              <div className="flex flex-row gap-x-2">
-                  <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">B-1</p></button>
-                  <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">B-2</p></button>
-              </div>
-              <div className="flex flex-row gap-x-2">
-                  <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">B-3</p></button>
-                  <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">B-4</p></button>
-              </div>
+            <div className="flex flex-row gap-x-2">
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  A-2
+                </p>
+              </button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  A-2
+                </p>
+              </button>
             </div>
-            <div className="flex flex-row gap-x-8 justify-evenly">
-              <div className="flex flex-row gap-x-2">
-                  <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">C-1</p></button>
-                  <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">C-2</p></button>
-              </div>
-              <div className="flex flex-row gap-x-2">
-                  <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">C-3</p></button>
-                  <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">C-4</p></button>
-              </div>
+          </div>
+          <div className="flex flex-row gap-x-8 justify-evenly">
+            <div className="flex flex-row gap-x-2">
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  B-1
+                </p>
+              </button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  B-2
+                </p>
+              </button>
             </div>
-            <div className="flex flex-row gap-x-8 justify-evenly">
-              <div className="flex flex-row gap-x-2">
-                  <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">D-1</p></button>
-                  <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">D-2</p></button>
-              </div>
-              <div className="flex flex-row gap-x-2">
-                <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">D-3</p></button>
-                <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">D-4</p></button>
+            <div className="flex flex-row gap-x-2">
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  B-3
+                </p>
+              </button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  B-4
+                </p>
+              </button>
             </div>
+          </div>
+          <div className="flex flex-row gap-x-8 justify-evenly">
+            <div className="flex flex-row gap-x-2">
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  C-1
+                </p>
+              </button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  C-2
+                </p>
+              </button>
             </div>
+            <div className="flex flex-row gap-x-2">
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  C-3
+                </p>
+              </button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  C-4
+                </p>
+              </button>
+            </div>
+          </div>
+          <div className="flex flex-row gap-x-8 justify-evenly">
+            <div className="flex flex-row gap-x-2">
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  D-1
+                </p>
+              </button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  D-2
+                </p>
+              </button>
+            </div>
+            <div className="flex flex-row gap-x-2">
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  D-3
+                </p>
+              </button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  D-4
+                </p>
+              </button>
+            </div>
+          </div>
         </div>
         <div id="109" className="flex flex-col gap-y-2 hidden">
-        <div className="flex flex-row gap-x-8 justify-evenly">
-          <div className="flex flex-row gap-x-2">
-              <button> <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">A-1</p></button>
-              <button> <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">A-2</p></button>
+          <div className="flex flex-row gap-x-8 justify-evenly">
+            <div className="flex flex-row gap-x-2">
+              <button>
+                {' '}
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  A-1
+                </p>
+              </button>
+              <button>
+                {' '}
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  A-2
+                </p>
+              </button>
+            </div>
+            <div className="flex flex-row gap-x-2">
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  A-3
+                </p>
+              </button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  A-4
+                </p>
+              </button>
+            </div>
           </div>
-          <div className="flex flex-row gap-x-2">
-              <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">A-3</p></button>
-              <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">A-4</p></button>
+          <div className="flex flex-row gap-x-8 justify-evenly">
+            <div className="flex flex-row gap-x-2">
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  B-1
+                </p>
+              </button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  B-2
+                </p>
+              </button>
+            </div>
+            <div className="flex flex-row gap-x-2">
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  B-3
+                </p>
+              </button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  B-4
+                </p>
+              </button>
+            </div>
+          </div>
+          <div className="flex flex-row gap-x-8 justify-evenly">
+            <div className="flex flex-row gap-x-2">
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  C-1
+                </p>
+              </button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  C-2
+                </p>
+              </button>
+            </div>
+            <div className="flex flex-row gap-x-2">
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  C-3
+                </p>
+              </button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  C-4
+                </p>
+              </button>
+            </div>
+          </div>
+          <div className="flex flex-row gap-x-8 justify-evenly">
+            <div className="flex flex-row gap-x-2">
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  D-1
+                </p>
+              </button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  D-2
+                </p>
+              </button>
+            </div>
+            <div className="flex flex-row gap-x-2">
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  D-3
+                </p>
+              </button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  D-4
+                </p>
+              </button>
+            </div>
           </div>
         </div>
-        <div className="flex flex-row gap-x-8 justify-evenly">
-          <div className="flex flex-row gap-x-2">
-              <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">B-1</p></button>
-              <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">B-2</p></button>
-          </div>
-          <div className="flex flex-row gap-x-2">
-              <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">B-3</p></button>
-              <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">B-4</p></button>
-          </div>
-        </div>
-        <div className="flex flex-row gap-x-8 justify-evenly">
-          <div className="flex flex-row gap-x-2">
-              <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">C-1</p></button>
-              <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">C-2</p></button>
-          </div>
-          <div className="flex flex-row gap-x-2">
-              <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">C-3</p></button>
-              <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">C-4</p></button>
-          </div>
-        </div>
-        <div className="flex flex-row gap-x-8 justify-evenly">
-          <div className="flex flex-row gap-x-2">
-              <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">D-1</p></button>
-              <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">D-2</p></button>
-          </div>
-          <div className="flex flex-row gap-x-2">
-            <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">D-3</p></button>
-            <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">D-4</p></button>
-        </div>
-        </div>
-    </div>
         <div id="110" className="flex flex-col gap-y-2 hidden">
           <div className="flex flex-row gap-x-8 justify-evenly">
             <div className="flex flex-row gap-x-2">
-                <button> <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">A-1</p></button>
-                <button> <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">A-2</p></button>
+              <button>
+                {' '}
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  A-1
+                </p>
+              </button>
+              <button>
+                {' '}
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  A-2
+                </p>
+              </button>
             </div>
             <div className="flex flex-row gap-x-2">
-                <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">A-3</p></button>
-                <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">A-4</p></button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  A-3
+                </p>
+              </button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  A-4
+                </p>
+              </button>
             </div>
           </div>
           <div className="flex flex-row gap-x-8 justify-evenly">
             <div className="flex flex-row gap-x-2">
-                <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">B-1</p></button>
-                <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">B-2</p></button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  B-1
+                </p>
+              </button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  B-2
+                </p>
+              </button>
             </div>
             <div className="flex flex-row gap-x-2">
-                <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">B-3</p></button>
-                <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">B-4</p></button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  B-3
+                </p>
+              </button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  B-4
+                </p>
+              </button>
             </div>
           </div>
           <div className="flex flex-row gap-x-8 justify-evenly">
             <div className="flex flex-row gap-x-2">
-                <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">C-1</p></button>
-                <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">C-2</p></button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  C-1
+                </p>
+              </button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  C-2
+                </p>
+              </button>
             </div>
             <div className="flex flex-row gap-x-2">
-                <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">C-3</p></button>
-                <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">C-4</p></button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  C-3
+                </p>
+              </button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  C-4
+                </p>
+              </button>
             </div>
           </div>
           <div className="flex flex-row gap-x-8 justify-evenly">
             <div className="flex flex-row gap-x-2">
-                <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">D-1</p></button>
-                <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">D-2</p></button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  D-1
+                </p>
+              </button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  D-2
+                </p>
+              </button>
             </div>
             <div className="flex flex-row gap-x-2">
-                <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">D-3</p></button>
-                <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">D-4</p></button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  D-3
+                </p>
+              </button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  D-4
+                </p>
+              </button>
             </div>
           </div>
-        </div>  
+        </div>
         <div id="111" className="flex flex-col gap-y-2 hidden">
           <div className="flex flex-row gap-x-8 justify-evenly">
             <div className="flex flex-row gap-x-2 ">
-                <button> <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">A-1</p></button>
-                <button> <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">A-2</p></button>
+              <button>
+                {' '}
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  A-1
+                </p>
+              </button>
+              <button>
+                {' '}
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  A-2
+                </p>
+              </button>
             </div>
             <div className="flex flex-row gap-x-2">
-                <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">A-3</p></button>
-                <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">A-4</p></button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  A-3
+                </p>
+              </button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  A-4
+                </p>
+              </button>
             </div>
           </div>
           <div className="flex flex-row gap-x-8 justify-evenly">
             <div className="flex flex-row gap-x-2">
-                <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">B-1</p></button>
-                <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">B-2</p></button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  B-1
+                </p>
+              </button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  B-2
+                </p>
+              </button>
             </div>
             <div className="flex flex-row gap-x-2">
-                <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">B-3</p></button>
-                <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">B-4</p></button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  B-3
+                </p>
+              </button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  B-4
+                </p>
+              </button>
             </div>
           </div>
           <div className="flex flex-row gap-x-8 justify-evenly">
             <div className="flex flex-row gap-x-2">
-                <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">C-1</p></button>
-                <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">C-2</p></button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  C-1
+                </p>
+              </button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  C-2
+                </p>
+              </button>
             </div>
             <div className="flex flex-row gap-x-2">
-                <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">C-3</p></button>
-                <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">C-4</p></button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  C-3
+                </p>
+              </button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  C-4
+                </p>
+              </button>
             </div>
           </div>
           <div className="flex flex-row gap-x-8 justify-evenly">
             <div className="flex flex-row gap-x-2">
-              <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">D-1</p></button>
-              <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">D-2</p></button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  D-1
+                </p>
+              </button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  D-2
+                </p>
+              </button>
             </div>
             <div className="flex flex-row gap-x-2">
-              <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">D-3</p></button>
-              <button><p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">D-4</p></button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  D-3
+                </p>
+              </button>
+              <button>
+                <p className="border border-md border-rose-800 w-10 h-10 rounded-md flex justify-center items-center">
+                  D-4
+                </p>
+              </button>
             </div>
           </div>
-</div>    
-</div>
-        
+        </div>
+      </div>
     </div>
   )
 }
