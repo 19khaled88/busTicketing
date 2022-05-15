@@ -1,14 +1,16 @@
 import React, { useRef, useState } from 'react'
 import {
+  useAuthState,
   useCreateUserWithEmailAndPassword,
   useSignInWithEmailAndPassword,
 } from 'react-firebase-hooks/auth'
 import { useLocation, useNavigate } from 'react-router-dom'
 import auth from '../Firebase/Firebase'
+
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import './Register.css'
-
+import { signInWithEmailAndPassword } from 'firebase/auth'
 const Register = () => {
   const [haveAccount, setHaveAccount] = useState(false)
   const [errorMessages, setErrorMessages] = useState({})
@@ -22,12 +24,16 @@ const Register = () => {
     error,
   ] = useCreateUserWithEmailAndPassword(auth)
   const [
-    signInWithEmailAndPassword,
+    // signInWithEmailAndPassword,
     user1,
     loading1,
     error1,
   ] = useSignInWithEmailAndPassword(auth)
-
+  const [
+    userAuthenticated,
+    loadingAuthenticated,
+    errorAuthenticated,
+  ] = useAuthState(auth)
   const emailRef = useRef(null)
   const passRef = useRef(null)
   const cPassRef = useRef(null)
@@ -45,12 +51,9 @@ const Register = () => {
     errorState2 = error1?.message
   }
 
-  if (user || user1) {
+  if (user || userAuthenticated) {
     navigate(from, { replace: true })
   }
-  //   if (user1) {
-  //     navigate(from, { replace: true })
-  //   }
 
   const accountHandler = () => {
     setHaveAccount(!haveAccount)
@@ -68,8 +71,17 @@ const Register = () => {
       }, 3000)
       return timer
     }
-    signInWithEmailAndPassword(email, pass)
-    toast('Welcome! you Logged In')
+    signInWithEmailAndPassword(auth, email, pass)
+      .then((userCredential) => {
+        // Signed in
+        var user = userCredential.user
+        console.log(user)
+        toast('Welcome! you Logged In')
+      })
+      .catch((error) => {
+        const errorMessage = error.message
+        toast('Email or password is wrong')
+      })
   }
   const signUpSubmit = (event) => {
     event.preventDefault()
